@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>蜡笔小瑶</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="main">
+        <div class="user">
+            <div class="touxiang"><img src="./uploads/头像2.PNG" alt=""></div>
+            <h4>蜡笔小瑶</h4>
+            <p>不要再失眠啦</p>
+            <div class="a-juzhong"><a href="#">切换账号</a></div>
+            <div class="endl">
+                <p class="txt">春华秋实，年年繁花</p>
+                <p class="txt">像太阳一样有起有落不失光彩</p>
+            </div>
+        </div>
+        <!-- 用clear清除user设置position fixed后不占位的问题 -->
+        <div class="clear"></div>
+        <div class="interface">
+            <div class="tab-container">
+                <ul class="tab-title">
+                    <li class="active">作品</li>
+                    <li>音乐</li>
+                    <li>风景</li>
+                </ul>
+                <div class="tab-content">
+        
+                    <div class="tab-panel show">
+                        <div class="production">
+                            <div>
+                                <img src="./images/作品1.JPG" alt="">
+                                <div class="txt">
+                                    <h3>天蓬与玉兔</h3>
+                                    <p>天蓬吃草莓，兔子吃萝卜</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./images/作品5.JPG" alt="">
+                                <div class="txt">
+                                    <h3>光与路</h3>
+                                    <p>有光的地方就有希望,</p>
+                                    <p>选择要走的路后就只管向前</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./images/作品3.JPG" alt="">
+                                <div class="txt">
+                                    <h3>沿途的风景</h3>
+                                    <p>不要赶路，去感受路</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./images/作品4.JPG" alt="">
+                                <div class="txt">
+                                    <h3>天空与大地</h3>
+                                    <p>树是大地想要触碰天空的手</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="tab-panel">
+                        <div class="music">
+                            <ul>
+                                <!-- controls 播放器控件 -->
+                                <li>
+                                    <img class="tu" src="./uploads/sasha.PNG" alt="">
+                                    <p class="txt">Is it just me</p>
+                                    <audio src="./music/Is It Just Me--Sasha Sloan-Charlie Puth.mp3" controls></audio>
+                                </li>
+                                <li>
+                                    <img class="tu" src="./uploads/周杰伦.PNG" alt="">
+                                    <p class="txt">晴天</p>
+                                    <audio src="./music/周杰伦 - 晴天.mp3" controls></audio>
+                                </li>
+                                <li>
+                                    <img class="tu" src="./uploads/lifeline.PNG" alt="">
+                                    <p class="txt">Lifeline</p>
+                                    <audio src="./music/lifeline.mp3" controls></audio>
+                                </li>
+                                <li><p>......</p></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <div class="tab-panel">
+                        <div class="scenery">
+                            <div class="live">
+                                <div class="tu"><img src="./images/蓝眼泪1.PNG" alt=""></div>
+                                <div class="tu"><img src="./images/蓝眼泪2.PNG" alt=""></div>
+                            </div>
+                            <p>蓝眼泪</p>
+                            <div class="live">
+                                <div class="tu"><img src="./images/大理1.PNG" alt=""></div>
+                                <div class="tu"><img src="./images/大理2.PNG" alt=""></div>
+                            </div>
+                            <p>大理</p>
+                            <div class="live">
+                                <div class="tu"><img src="./images/西双版纳1.PNG" alt=""></div>
+                                <div class="tu"><img src="./images/西双版纳2.PNG" alt=""></div>
+                            </div>
+                            <p>西双版纳</p>
+                            <div class="live">
+                                <div class="tu"><img src="./images/青青草原1.PNG" alt=""></div>
+                                <div class="tu"><img src="./images/青青草原2.PNG" alt=""></div>
+                            </div>
+                            <p>青青大草原</p>
+                            <p>......</p>
+                            <p>答案都在路上自由都在风里</p>
+                            <p>......</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //获得索引标题
+        let btns=document.querySelectorAll('.tab-title li')
+        //添加点击事件
+        btns.forEach((item,i)=>{
+            item.onclick=function(){
+                //取消已经选中的标题
+                let activeBtn=document.querySelector('.tab-title li.active')
+                //清除选中标题
+                activeBtn.classList.remove('active')
+                //添加点击选中状态
+                this.classList.add('active')
+
+                //tab内容切换
+                let showPanel=document.querySelector('.tab-content .tab-panel.show')
+                showPanel.classList.remove('show')
+                let panels=document.querySelectorAll('.tab-content .tab-panel')
+                panels[i].classList.add('show')
+            }
+        })
+    </script>
+</body>
+</html>

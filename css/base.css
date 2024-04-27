@@ -1,0 +1,38 @@
+/* 基础公共样式 */
+
+/* 清除默认样式 */
+*{
+    margin: 0;
+    padding:0;
+
+    /* 设置的边框和内边距的值是包含在 width 内的。也就是说，如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减去 (border + padding) 的值。 */
+    box-sizing: border-box;
+}
+/* 去掉网址的下划线 */
+a{
+    text-decoration: none;
+}
+/* 版心居中 */
+.wrapper{
+    margin: 0 auto;
+}
+/* 背景图 */
+body{
+    background: url(../uploads/少女网页背景.jpg);
+    background-size: 100% 100%;
+    /* 让背景基于容器大小伸缩   窗口改变不影响*/
+    background-attachment: fixed;
+}
+ul{
+    /* 去掉列表中的点 */
+    list-style: none;
+}
+/* 去掉网址的下划线 */
+a{
+    text-decoration: none;
+}
+
+/* 锚点跳转动画 */
+html{
+    scroll-behavior: smooth;
+}
